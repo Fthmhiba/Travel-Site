@@ -1,0 +1,177 @@
+.main{
+    width: 100%;
+
+    .secTitle{
+        .title{
+            position: relative;
+            width: max-content;
+            color: gray;
+            margin: 1rem 0;
+            z-index: 2;
+
+            &::after{
+                position: absolute;
+                content: '';
+                background: hsl(188, 42%, 48%);
+                height: 5px;
+                width: 120px;
+                right: 0;
+                bottom: 5px;
+                z-index: -1;
+            }
+
+        }
+    }
+    .secContent{
+        justify-content: center;
+        gap: 1.5rem;
+
+        .singleDestination{
+            height: 100%;
+            width: 80%;
+            display: grid;
+            row-gap: 10px;
+            border-radius: 10px;
+            align-items: center;
+            background: lightgray;
+            box-shadow: 0 2px 4px rgba(2, 15, 29, 0.242);
+            overflow: hidden;
+
+            &:hover{
+                background-color: lightslategray;
+                box-shadow: 0 2px 4px rgba(85, 85, 114, 0.549);
+                transition: .3s ease;
+
+            }
+
+            .imageDiv{
+                height: 100%;
+                width: 100%;
+                overflow: hidden;
+
+                .img{
+                    height: 100%;
+                    width: 100%;
+                    object-fit: contain;
+                    transition: 2s ease;
+                }
+                &:hover{
+                    .img{
+                        transform: scale(1.1);
+                    }
+                }
+            }
+
+            .cardInfo{
+                padding: 1rem;
+
+                .destTitle{
+                    color: black;
+                    font-size: 1.25rem;
+                }
+                .continent{
+                    gap: .5rem;
+
+                    .icon{
+                        color: gray;
+                        font-size: 18px;
+                    }
+                    .name{
+                        color: gray;
+                        font-weight: 400;
+                        font-size: 14px;
+                    }
+                }
+
+                .fees{
+                    width: 100%;
+                    justify-content: space-around;
+                    padding: 1rem;
+                    margin: 1rem;
+                    border-top: 1.5px solid gray;
+                    border-bottom: 1.5px solid gray;
+
+
+                    .grade{
+                        color: gray;
+                        max-width: 100px;
+                        line-height: 20px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+
+                        .small{
+                            text-align: center;
+                            background: linear-gradient(to right,hsl(187,85%,43%),hsl(199,100%, 33%));
+                            color: beige;
+                            border-radius: 3rem;
+                            gap: 1rem;
+                            padding: 1px 10px;
+                            font-size: 10px;
+                        }
+                    }
+
+                    .price{
+                        font-size: 2rem;
+                        color: black;
+                    }
+                }
+                .desc{
+                    font-size: 13.5px;
+                    color: gray;
+                    font-weight: 500;
+                }
+                .btn{
+                    width: 100px;
+                    margin-top: 1rem;
+                    color: beige;
+                    font-weight: 600;
+                    justify-content: space-between;
+                    gap: .5rem;
+
+                    .icon{
+                        align-self: center;
+                        font-size: 18px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* mq********************/
+
+
+@media screen and (min-width: 500px) {
+    .title{
+        font-size: 1.5rem;
+        &::after{
+            width: 155px !important;
+        }
+    }
+    .secContent{
+        grid-template-columns: repeat(2,1fr);
+
+        .singleDestination{
+            height: auto;
+        }
+    }
+}
+
+@media screen and (min-width:840px) {
+    .secContent{
+        grid-template-columns: repeat(3,1fr);
+
+        .singleDestination{
+            height: auto;
+        }
+    }
+}
+
+@media screen and (min-width:1200px) {
+    .main{
+        /* height: 80%; */
+        object-fit: cover;
+        padding: 20vw 0;
+    }
+}
